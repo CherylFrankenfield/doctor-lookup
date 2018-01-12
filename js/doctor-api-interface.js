@@ -10,17 +10,14 @@ $(document).ready(function() {
 
     let doctorSearch = new Doctor(first,last,ailment);
 
-    doctorApi(function(response){
-      for (var i = 0; i < response.length; i++) {
-        var results = response[i].join(',</br>');
-        $('#results').append(`<li>${results}</li></br>`);
+    doctorSearch.doctorApi(function(response){
+      if (response) {
+        $('#results').append(`<li>${response}</li></br>`);
         $('#attribution').append(`<p>Powered by <a href="https://betterdoctor.com">BetterDoctor.</a></p>`);
       }
     }, function(){
       alert("We apologize for the inconvenience. Our servers are overloaded, please try again momentarily.")
     });
 
-
-    // $('#results').append(`<li>${article.author}</li></br>`);
   });
 });
