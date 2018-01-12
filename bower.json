@@ -1,0 +1,21 @@
+{
+  "name": "doctor-lookup",
+  "description": "Find a doctor in Portland who can help with your condition",
+  "main": "index.js",
+  "authors": [
+    "Cheryl Frankenfield"
+  ],
+  "license": "Open source",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^3.2.1",
+    "bootstrap": "^3.3.7"
+  }
+}
