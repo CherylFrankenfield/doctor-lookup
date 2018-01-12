@@ -1,18 +1,19 @@
-import { Doctor } from "./../js/doctor-api-scripts.js";
+import { doctorApi } from "./../js/doctor-api-scripts.js";
 const apiKey = require('./../.env').apiKey;
 
 $(document).ready(function() {
   $('form#find-help').submit(function(event){
     event.preventDefault();
-    const first = $('#first-name').val("John");
-    const last = $('#last-name').val("Butler");
-    const ailment = $('#medical-search').val("depression");
+    const first = $('#first-name').val();
+    const last = $('#last-name').val();
+    const ailment = $('#medical-search').val();
+    const doctor = doctorApi(first,last,ailment);
 
-    let doctorSearch = new Doctor(first,last,ailment);
-
-    doctorSearch.doctorApi(function(response){
+    doctor.then(function(response){
+      const search = JSON.parse(response);
+      console.log(search.data.profile.last_name);
       if (response) {
-        $('#results').append(`<li>${response}</li></br>`);
+        $('#results').append(`<li>${search.data.profile.last_name}</li></br>`);
         $('#attribution').append(`<p>Powered by <a href="https://betterdoctor.com">BetterDoctor.</a></p>`);
       }
     }, function(){
