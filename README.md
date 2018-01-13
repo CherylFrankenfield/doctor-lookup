@@ -12,17 +12,17 @@ _Create an app for patients to input ailment and search for a doctor in Portland
 
 * In terminal:
 -------
-* Git clone ________.
+* Git clone https://github.com/CherylFrankenfield/doctor-lookup.git.
 *
 * Visit BetterDoctor.com to get free, unique API key. Creat
 
 ## Planning
 
-1. Configuration/dependencies
+### 1. Configuration/dependencies
   * This app uses Bootstrap and jQuery.
   * This app will use BetterDoctor's API and an APIkey is needed.
 
-2. Specs
+### 2. Specs
 _The app will take a user's keyword for a medical issue and return the first name of doctor in Portland._
 * _Input: Text input of ailment: "sore throat"._
 * _Output: Returns a doctor's first name: "Jennifer"._
@@ -67,19 +67,19 @@ _The app will return an error if connection to API is interrupted for user, the 
 * _Input: User enters keywords in form fields: Jennifer Smith, sore throat._
 * _Output: Connection is interrupted and app returns: "We apologize for the inconvenience. Our servers are overloaded, please try again momentarily."_
 
-3. Integration
+### 3. Integration
   * Display user input fields (for ailment search) a submit button, and section on the page to display search results.
   * Integrate feature that will allow user to search for doctors in additional locations other than Portland.
   * Future user stories may include first calling an API to display list of conditions in a dropdown field for user to select from. Then a call to pull the doctors who match.
   * Future user story may allow user to review any ratings information on doctor.
 
-4. UX/UI
+### 4. UX/UI
     * Include and modify Bootstrap/Sass etc.
     * Develop custom style, doctor info display in a easy-to-read format and/or print button / create PDF for user to easily print hard copy if needed.
 
 ## Known Bugs
 
-_text._
+_Working on targeting nested array info for output and getting a lot of 404 server not found and net::ERR_CONNECTION_REFUSE errors._
 
 ## Support and contact details
 
