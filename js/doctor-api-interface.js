@@ -20,7 +20,9 @@ $(document).ready(function() {
       console.log(search.data[2].profile.last_name);
       console.log(search.data[3].profile.last_name);
       console.log(search.data[4].specialties[0]);
-      console.log(search.data[6].practices.accepts_new_patients);
+      console.log(search.data[6].practices[0].accepts_new_patients);
+      console.log(search.data[6].practices[0].visit_address.street);
+      console.log(search.data[6].practices[0].visit_address.zip);
       console.log(search.data[6].practices[2].phones[0].number);
       const results = [];
       for (let i = 0; i < search.length; i++) {
