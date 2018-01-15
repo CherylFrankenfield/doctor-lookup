@@ -14,6 +14,14 @@ $(document).ready(function() {
       console.log(search);
       // console.log(search.meta.ignored_query_parameters);
       console.log(search.data[1].profile.first_name);
+      console.log(search.data[2].profile.first_name);
+      console.log(search.data[3].profile.first_name);
+      console.log(search.data[1].profile.last_name);
+      console.log(search.data[2].profile.last_name);
+      console.log(search.data[3].profile.last_name);
+      console.log(search.data[4].specialties[0]);
+      console.log(search.data[6].practices.accepts_new_patients);
+      console.log(search.data[6].practices[2].phones[0].number);
       const results = [];
       for (let i = 0; i < search.length; i++) {
         search.data[i].profile.map(function(profile){
@@ -22,7 +30,6 @@ $(document).ready(function() {
           }
         });
       }
-      console.log(profile.first_name);
       // console.log(search.data.profile.last_name[0]);
       // if (search.meta.ignored_query_parameters) {
       //   $('#results').append(`<li>${search.meta.ignored_query_parameters}</li></br>`);
