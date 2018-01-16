@@ -10,11 +10,20 @@ _Create an app for patients to input ailment and search for a doctor in Portland
 
 ## Setup/Installation Requirements
 
-* In terminal:
+_In terminal:_
 -------
-* Git clone https://github.com/CherylFrankenfield/doctor-lookup.git.
-*
-* Visit BetterDoctor.com to get free, unique API key. Creat
+* Git clone https://github.com/CherylFrankenfield/doctor-lookup.git
+* Run:
+npm install
+bower install
+gulp bower
+gulp serve
+
+_In Folders/Files:_
+-------
+* Visit BetterDoctor.com to get free, unique API key. Create an .env file on the root directory of project and include in file:
+exports.apiKey = "your-API-key";
+* In js folder, doctor-api-scripts.js file, replace const url variable with ... &user_key="include your API key"...
 
 ## Planning
 
