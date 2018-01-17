@@ -1,10 +1,10 @@
-export class Doctor {
+export class Practice {
   constructor(first,last,phone,address,zip,ailment) {
     this.first = first;
     this.last = last;
-    this.phone = phone;
-    this.address = address;
-    this.zip = zip;
+    this.phone = "";
+    this.address = "";
+    this.zip = "";
     this.ailment = ailment;
   }
 }
@@ -17,6 +17,9 @@ export function doctorApi(first,last,phone,address,zip,ailment) {
     request.onload = function() {
       if (this.status === 200) {
         success(request.response);
+        const search = JSON.parse(request.response);
+        // console.log(request.response);
+        
 
 
       } else {
