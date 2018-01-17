@@ -9,10 +9,10 @@ $(document).ready(function() {
     const ailment = $('#medical-search').val();
 
     const doctor = doctorApi(first,last,ailment);
-    const practice = new Practice(first,last,address,ailment)
+    const practice = new Practice(first,last,ailment)
 
     doctor.then(function(response){
-      const search = JSON.parse(response);
+      // const search = JSON.parse(response);
       $('#attribution').append(`<p>Powered by <a href="https://betterdoctor.com">BetterDoctor.</a></p>`);
       // console.log(search);
       // console.log(search.data[1].profile.first_name);
@@ -24,8 +24,8 @@ $(document).ready(function() {
       // console.log(search.data[6].practices[0].visit_address.zip);
       // console.log(search.data[6].practices[2].phones[0].number);
       $('#results').append(`<li>${first}</li></br>`);          $('#results').append(`<li>${last}</li></br>`);
-      $('#results').append(`<li>${practice.address}</li></br>`);          $('#results').append(`<li>${zip}</li></br>`);
-      $('#results').append(`<li>${phone}</li></br>`);          $('#results').append(`<li>${ailment}</li></br>`);
+      $('#results').append(`<li>${practice.address}</li></br>`);          $('#results').append(`<li>${practice.zip}</li></br>`);
+      $('#results').append(`<li>${practice.phone}</li></br>`);          $('#results').append(`<li>${ailment}</li></br>`);
       $('#results').append(`<li>"Accepting New Patients"</li></br>`);
 
     }, function(error){
