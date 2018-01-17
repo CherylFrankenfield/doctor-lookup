@@ -9,7 +9,7 @@ $(document).ready(function() {
     const ailment = $('#medical-search').val();
 
     const doctor = doctorApi(first,last,ailment);
-    const practice = new Practice(first,last,ailment)
+    const practice = new Practice(first,last,address,ailment)
 
     doctor.then(function(response){
       const search = JSON.parse(response);
@@ -23,28 +23,10 @@ $(document).ready(function() {
       // console.log(search.data[6].practices[0].visit_address.street);
       // console.log(search.data[6].practices[0].visit_address.zip);
       // console.log(search.data[6].practices[2].phones[0].number);
-      for (let i = 0; i < search.data[i].profile.first_name.length; i++) {
-        if (search.data[i].profile.first_name === first) {
-          $('#results').append(`<li>${first}</li></br>`);
-          }
-      }
-      for (let j = 0; j < search.data[j].profile.last_name.length; j++) {
-        if (search.data[j].profile.last_name === last) {
-          $('#results').append(`<li>${last}</li></br>`);
-          }
-      }
-      for (let k = 0; k < search.data[k].practices[0].accepts_new_patients; k++) {
-        if (search.data[k].practices[0].accepts_new_patients === true) {
-          $('#results').append(`<li>"Accepting New Patients"</li></br>`);
-        } else {
-          $('#results').append(`<li>"Not Accepting New Patients"</li></br>`);
-        }
-      }
-      for (let m = 0; m < search.data[m].specialties[0].description.length; m++) {
-        if (search.data[m].specialties[0].description.includes(ailment)) {
-          $('#results').append(`<li>${search.data[m].specialties[0].description}</li></br>`);
-          }
-      }
+      $('#results').append(`<li>${first}</li></br>`);          $('#results').append(`<li>${last}</li></br>`);
+      $('#results').append(`<li>${practice.address}</li></br>`);          $('#results').append(`<li>${zip}</li></br>`);
+      $('#results').append(`<li>${phone}</li></br>`);          $('#results').append(`<li>${ailment}</li></br>`);
+      $('#results').append(`<li>"Accepting New Patients"</li></br>`);
 
     }, function(error){
       alert("You have received the following error: " + error)
