@@ -21,18 +21,18 @@ export function doctorApi(first,last,address,zip,phone,ailment) {
         // console.log(request.response);
         // console.log(search.data[0].profile.first_name);
         for (let i = 0; i < search.data.length; i++) {
+          const allResults = [];
           const first = search.data[i].profile.first_name;
           const last = search.data[i].profile.last_name;
-          const ailment = search.data[i].specialties[2].description.includes(ailment);
+          const ailment = search.data[i].specialties[0].description;
           const address = search.data[i].practices[0].visit_address.street;
           const zip = search.data[i].practices[0].visit_address.zip;
           const phone = search.data[i].practices[0].phones[0].number;
           const results = [first, last, address, zip, phone, ailment];
-          // console.log(results);
+          allResults.push(results);
+          console.log(allResults);
         }
-        return results;
-        console.log(results);
-
+        
       } else {
         error(Error(request.statusText));
       }
