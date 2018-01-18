@@ -11,13 +11,15 @@ $(document).ready(function() {
     // const practice = new Practice(first,last,ailment)
 
     doctor.then(function(allResults){
+      console.log(allResults);
       for (let i = 0; i < allResults.length; i++) {
-        $('#results-first').append(`<li>First Name: ${allResults[i][0]}</li></br>`);
-        $('#results').append(`<li>Last Name: ${allResults[i][1]}</li></br>`);
-        $('#results').append(`<li> Street Address: ${address}</li></br>`);      $('#results').append(`<li>Portland,OR, ${zip}</li></br>`);
-        $('#results').append(`<li>${phone}</li></br>`);
-        $('#attribution').append(`<p>Powered by <a href="https://betterdoctor.com">BetterDoctor.</a></p>`);
+        $('#results').append(`<li>First Name: ${allResults[i]}</li></br>`
+        `<li>Last Name: ${allResults[i]}</li></br>`
+        `<li> Street Address: ${allResults[i]}</li></br>`
+        `<li>Portland,OR, ${allResults[i]}</li></br>`
+        `<li>${allResults[i]}</li></br>`);
       }
+      $('#attribution').append(`<p>Powered by <a href="https://betterdoctor.com">BetterDoctor.</a></p>`);
 
     }, function(error){
       alert("You have received the following error: " + error)

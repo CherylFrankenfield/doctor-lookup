@@ -24,13 +24,13 @@ export function doctorApi(first,last,address,zip,phone,ailment) {
           const allResults = [];
           const first = search.data[i].profile.first_name;
           const last = search.data[i].profile.last_name;
-          const ailment = search.data[i].specialties[0].description;
+          // const ailment = search.data[i].specialties[0].description;
           const address = search.data[i].practices[0].visit_address.street;
           const zip = search.data[i].practices[0].visit_address.zip;
           const phone = search.data[i].practices[0].phones[0].number;
           const results = [first, last, address, zip, phone, ailment];
           allResults.push(results);
-          console.log(allResults);
+          // console.log(allResults);
         }
 
       } else {
