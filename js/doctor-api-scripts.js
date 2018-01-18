@@ -20,18 +20,15 @@ export function doctorApi(first,last,address,zip,phone,ailment) {
         const search = JSON.parse(request.response);
         // console.log(request.response);
         // console.log(search.data[0].profile.first_name);
-        // const results = [];
         for (let i = 0; i < search.data.length; i++) {
           const first = search.data[i].profile.first_name;
-            // search.data[i].profile.first_name === first;
-            // results.push(first);
-          console.log(first);
           const last = search.data[i].profile.last_name;
-          const ailment = search.data[i].specialties[0].description.includes(ailment);
+          const ailment = search.data[i].specialties[2].description.includes(ailment);
           const address = search.data[i].practices[0].visit_address.street;
           const zip = search.data[i].practices[0].visit_address.zip;
           const phone = search.data[i].practices[0].phones[0].number;
           const results = [first, last, address, zip, phone, ailment];
+          // console.log(results);
         }
         return results;
         console.log(results);
