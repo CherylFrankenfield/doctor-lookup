@@ -1,13 +1,13 @@
-export class Practice {
-  constructor(first,last,phone,address,zip,ailment) {
-    this.first = first;
-    this.last = last;
-    this.phone = "";
-    this.address = "";
-    this.zip = "";
-    this.ailment = ailment;
-  }
-}
+// export class Practice {
+//   constructor(first,last,phone,address,zip,ailment) {
+//     this.first = first;
+//     this.last = last;
+//     this.phone = "";
+//     this.address = "";
+//     this.zip = "";
+//     this.ailment = ailment;
+//   }
+// }
 
 export function doctorApi(first,last,address,zip,phone,ailment) {
   return new Promise(function(success, error) {
@@ -32,7 +32,7 @@ export function doctorApi(first,last,address,zip,phone,ailment) {
           allResults.push(results);
           console.log(allResults);
         }
-        
+
       } else {
         error(Error(request.statusText));
       }
