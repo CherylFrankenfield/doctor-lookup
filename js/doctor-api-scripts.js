@@ -16,12 +16,10 @@ export function doctorApi(first,last,address,zip,phone,ailment) {
 
     request.onload = function() {
       if (this.status === 200) {
-        success(request.response);
         const search = JSON.parse(request.response);
-        // console.log(request.response);
-        // console.log(search.data[0].profile.first_name);
+        // console.log(typeof request.response);
+        const allResults = [];
         for (let i = 0; i < search.data.length; i++) {
-          const allResults = [];
           const first = search.data[i].profile.first_name;
           const last = search.data[i].profile.last_name;
           // const ailment = search.data[i].specialties[0].description;
@@ -30,6 +28,8 @@ export function doctorApi(first,last,address,zip,phone,ailment) {
           const phone = search.data[i].practices[0].phones[0].number;
           const results = [first, last, address, zip, phone, ailment];
           allResults.push(results);
+
+          success(allResults);
           // console.log(allResults);
         }
 

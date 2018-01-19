@@ -10,10 +10,13 @@ $(document).ready(function() {
     const doctor = doctorApi(first,last,ailment);
     // const practice = new Practice(first,last,ailment)
 
-    doctor.then(function(allResults){
-      console.log(allResults);
+    doctor.then(function(success){
+      console.log(success);
+      // console.log(typeof allResults);
+      let myDOMelement = $('#results');
+
       for (let i = 0; i < allResults.length; i++) {
-        $('#results').append(`<li>First Name: ${allResults[i]}</li></br>`
+        myDOMelement.append(`<li>First Name: ${allResults[i]}</li></br>`
         `<li>Last Name: ${allResults[i]}</li></br>`
         `<li> Street Address: ${allResults[i]}</li></br>`
         `<li>Portland,OR, ${allResults[i]}</li></br>`
