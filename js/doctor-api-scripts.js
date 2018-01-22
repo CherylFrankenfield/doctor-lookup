@@ -2,9 +2,9 @@
 //   constructor(first,last,phone,address,zip,ailment) {
 //     this.first = first;
 //     this.last = last;
-//     this.phone = "";
-//     this.address = "";
-//     this.zip = "";
+//     this.phone = phone;
+//     this.address = address;
+//     this.zip = zip;
 //     this.ailment = ailment;
 //   }
 // }
@@ -20,13 +20,13 @@ export function doctorApi(first,last,address,zip,phone) {
         // console.log(typeof request.response);
         const allResults = [];
         for (let i = 0; i < search.data.length; i++) {
-          const first = search.data[i].profile.first_name;
-          const last = search.data[i].profile.last_name;
+          const firstName = search.data[i].profile.first_name;
+          const lastName = search.data[i].profile.last_name;
           // const ailment = search.data[i].specialties[0].description;
           const address = search.data[i].practices[0].visit_address.street;
           const zip = search.data[i].practices[0].visit_address.zip;
           const phone = search.data[i].practices[0].phones[0].number;
-          const results = [first, last, address, zip, phone];
+          const results = [firstName, lastName, address, zip, phone];
           allResults.push(results);
 
           success(allResults);

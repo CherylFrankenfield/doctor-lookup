@@ -8,14 +8,18 @@ $(document).ready(function() {
     const last = $('#last-name').val();
     const ailment = $('#medical-search').val();
     const doctor = doctorApi(first,last,ailment);
-    // const practice = new Practice(first,last,ailment)
+    // const practice = new Practice(first,last,ailment);
 
     doctor.then(function(allResults){
       console.log(allResults);
       // console.log(typeof allResults);
       for (let i = 0; i < allResults.length; i++) {
-        $('#results').append(`<li>Doctor: ${allResults[i]}</li></br>`);
-
+        // if (allResults[i][0] === first) {
+        // $('#results').append(`<li>First Name: ${first}</li>`);
+        // } else if (allResults[i][1] === 'last') {
+        //   $('#results').append(`<li>Last Name: ${last}</li>`);
+        $('#results').append(`<ul><li>Doctor: ${allResults[i]}</li></ul></br>`);
+        // }
         // `<li>Last Name: ${allResults[i]}</li></br>`
         // `<li> Street Address: ${allResults[i]}</li></br>`
         // `<li>Portland,OR, ${allResults[i]}</li></br>`
